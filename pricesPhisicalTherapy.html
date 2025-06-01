@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prices</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Khand:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Khand:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="style7.css">
+</head>
+<body>
+    <script src="script7.js"></script>
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo"><img src="imgs/Logo.png" alt=""></div>
+                <div class="logo-text">
+                    <span id="logoText" class="nova">Nova</span><span class="meds">Meds</span>
+                </div>
+            </div>
+            
+            <div class="contact-section">
+                <div class="contact-group">
+                    <div class="contact-icon phone-icon"><img src="imgs/PhonePng.png" alt=""></div>
+                    <div class="contact-info">
+                        <span class="contact-label">Phone Number</span>
+                        <a href="tel:+373-123-123-31" class="contact-value">+373-123-123-31</a>
+                    </div>
+                </div>
+                
+                <div class="contact-group">
+                    <div class="contact-icon email-icon"><img src="imgs/email.png" alt=""></div>
+                    <div class="contact-info">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:info@novameds.com" class="contact-value">info@novameds.com</a>
+                    </div>
+                </div>
+                
+                <button class="book-btn" onclick="bookAppointment()">
+                    Book Appointment
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo-text">
+                <span class="nova">Nova</span><span class="meds">Meds</span>
+            </div>
+            <button class="close-btn" onclick="closeMobileMenu()">✕</button>
+        </div>
+        
+        <div class="mobile-contact-item">
+            <div class="contact-icon phone-icon"><img src="imgs/blue-phone.png" alt="">
+            </div>
+            <div>
+                <div class="contact-label">Phone Number</div>
+                <a href="tel:+373-123-123-31" class="contact-value">+373-123-123-31</a>
+            </div>
+        </div>
+        
+        <div class="mobile-contact-item">
+            <div class="contact-icon email-icon"><img src="imgs/blue-email.png" alt=""></div>
+            <div>
+                <div class="contact-label">Email</div>
+                <a href="mailto:info@novameds.com" class="contact-value">info@novameds.com</a>
+            </div>
+        </div>
+        
+        <button class="book-btn mobile-book-btn" onclick="bookAppointment()">
+            Book an Appointment
+        </button>
+
+    
+        <nav class="mobile-nav-menu">
+            <div class="mobile-nav-item">
+                <a href="homepage.html" class="mobile-nav-link">
+                    HOME
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="aboutus.html" class="mobile-nav-link">
+                    ABOUT US
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="department.html" class="mobile-nav-link">
+                    DEPARTMENT
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="price.html" class="mobile-nav-link">
+                    PRICES
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="404.html" class="mobile-nav-link">
+                    BLOGS
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="contact.html" class="mobile-nav-link">
+                    CONTACT
+                </a>
+            </div>
+        </nav>
+
+
+        <div class="mobile-social-icons">
+            <a href="https://www.facebook.com/" class="social-icon" title="Facebook"><img src="imgs/blue-facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/" class="social-icon" title="Instagram"><img src="imgs/blue-insta.png" alt=""></a>
+            <a href="#" class="social-icon" title="Cart" data-cart-toggle>
+                <img src="imgs/blue-cart.png" alt="">
+                <span data-cart-badge class="cart-badge"></span>
+            </a>
+            <a href="#" class="social-icon" title="Search"><img src="imgs/blue-magnifying.png" alt=""></a>
+        </div>
+    </div>
+
+    <nav class="nav-section">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="homepage.html" class="nav-link active">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="aboutus.html" class="nav-link">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a href="department.html" class="nav-link">DEPARTMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="price.html" class="nav-link">
+                        PRICES
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="404.html" class="nav-link">BLOGS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" class="social-icon" title="Facebook"><img src="imgs/facebook.png" alt=""></a>
+                <a href="https://www.instagram.com/" class="social-icon" title="Instagram"><img src="imgs/instagram.png" alt=""></a>
+                <a href="#" class="social-icon" title="Cart" data-cart-toggle>
+                    <img src="imgs/cart.png" alt="">
+                    <span data-cart-badge class="cart-badge"></span>
+                </a>
+                <a href="#" class="social-icon" title="Search"><img src="imgs/magnifying.png" alt=""></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="contact-section-hero-banner">
+        <div class="contact-hero-stars-container">
+            <div class="contact-hero-star-element contact-hero-star-1">✦</div>
+            <div class="contact-hero-star-element contact-hero-star-2">✨</div>
+            <div class="contact-hero-star-element contact-hero-star-3">⭐</div>
+        </div>
+        
+        <h1 class="contact-hero-main-title">
+            <span class="contact-hero-title-text">Phisycal</span> <span class="contact-hero-title-highlight">Therapy</span>
+        </h1>
+        
+        <p class="contact-hero-subtitle-text">
+            Our Physical Therapy services help patients recover from injuries, improve mobility, and manage pain through personalized exercise programs and hands-on techniques. Whether you're healing from surgery, dealing with chronic pain, or restoring strength after an accident, our licensed physiotherapists create a plan tailored to your body’s needs.
+        </p>
+    </div>
+
+
+    <div class="therapy-container">
+        <div class="therapy-image-section">
+            <div class="therapy-main-image" id="therapyMainImage"></div>
+            <div class="therapy-thumbnail-grid">
+                <div class="therapy-thumbnail" onclick="changeTherapyImage('img1')"><img src="imgs/product-image(2).jpg" alt=""></div>
+                <div class="therapy-thumbnail" onclick="changeTherapyImage('img2')"><img src="imgs/product-image(3).jpg" alt=""></div>
+                <div class="therapy-thumbnail" onclick="changeTherapyImage('img3')"><img src="imgs/product-image(4).jpg" alt=""></div>
+                <div class="therapy-thumbnail" onclick="changeTherapyImage('img4')"><img src="imgs/product-image(5).jpg" alt=""></div>
+                <div class="therapy-thumbnail" onclick="changeTherapyImage('img5')"><img src="imgs/product-image(6).jpg" alt=""></div>
+                <div class="therapy-thumbnail" onclick="changeTherapyImage('img6')"><img src="imgs/product-image(7).jpg" alt=""></div>
+                <div class="therapy-thumbnail" onclick="changeTherapyImage('img7')"><img src="imgs/product-image(8).jpg" alt=""></div>
+                <div class="therapy-thumbnail" onclick="changeTherapyImage('img8')"><img src="imgs/product-image(9).jpg" alt=""></div>
+            </div>
+        </div>
+
+        <div class="therapy-booking-section">
+            <div class="therapy-header">
+                <h1 class="therapy-title">Physical Therapy</h1>
+                <div class="therapy-rating">
+                    <div class="therapy-stars">★★★★★</div>
+                    <span class="therapy-reviews">15 reviews</span>
+                </div>
+                <div class="therapy-doctor-info">Doctor: Vanessa Nani</div>
+                <div class="therapy-doctor-avatars">
+                    <div class="therapy-avatar">VN</div>
+                    <div class="therapy-avatar">MJ</div>
+                    <div class="therapy-avatar">SK</div>
+                </div>
+            </div>
+
+            <div class="therapy-plan-section">
+                <div class="therapy-section-title">Select your plan:</div>
+                <div class="therapy-plan-options">
+                    <div class="therapy-plan-option therapy-selected" onclick="selectTherapyPlan(this, 99.99)">
+                        <div class="therapy-plan-header">
+                            <div class="therapy-plan-name">One-time service</div>
+                            <div class="therapy-plan-price">$99.99</div>
+                        </div>
+                    </div>
+                    <div class="therapy-plan-option" onclick="selectTherapyPlan(this, 110.04)">
+                        <div class="therapy-plan-header">
+                            <div class="therapy-plan-name">Subscribe & save 15%</div>
+                            <div class="therapy-plan-price">$110.04</div>
+                        </div>
+                        <div class="therapy-plan-description">Bill monthly - cancel anytime after month</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="therapy-quantity-section">
+                <button class="therapy-quantity-btn" onclick="changeTherapyQuantity(-1)">-</button>
+                <div class="therapy-quantity-display" id="therapyQuantity">1</div>
+                <button class="therapy-quantity-btn" onclick="changeTherapyQuantity(1)">+</button>
+            </div>
+
+            <button class="therapy-add-to-cart" onclick="addTherapyToCart()">Add to cart</button>
+
+            <div class="therapy-tabs">
+                <div class="therapy-tab therapy-active" onclick="switchTherapyTab(this, 'service')">Service Description</div>
+                <div class="therapy-tab" onclick="switchTherapyTab(this, 'procedure')">About Procedure</div>
+            </div>
+
+            <div class="therapy-tab-content" id="therapyTabContent">
+                Personalized exercises and hands-on care to restore movement, reduce pain, and support recovery.
+            </div>
+        </div>
+    </div>
+
+    <div class="appointment-banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <h2>Book an Appointment</h2>
+                <div class="banner-features">
+                    <div class="feature">Top-Rated Medical Team</div>
+                    <div class="feature">Trusted by Thousands</div>
+                    <div class="feature">Flexible Scheduling</div>
+                </div>
+            </div>
+            <div class="banner-buttons">
+                <a href="price.html" class="btn btn-primary">Get started</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <div class="logo"><img src="imgs/white-logo.png" alt="">
+                    </div>
+                    <div class="brand-name">
+                        <span class="nova">Nova</span><span class="meds">Meds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="404.html">General Consultations</a></li>
+                    <li><a href="404.html">Preventive Health Screenings</a></li>
+                    <li><a href="404.html">Laboratory Testing</a></li>
+                    <li><a href="404.html">Allergy Testing</a></li>
+                    <li><a href="404.html">Wound Care & Suturing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Specialist</h3>
+                <ul>
+                    <li><a href="404.html">Cardiology</a></li>
+                    <li><a href="404.html">Dermatology</a></li>
+                    <li><a href="404.html">Pediatrics</a></li>
+                    <li><a href="404.html">Gynecology</a></li>
+                    <li><a href="404.html">Neurology</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="404.html">Patient Forms</a></li>
+                    <li><a href="404.html">Blog</a></li>
+                    <li><a href="404.html">FAQs</a></li>
+                    <li><a href="404.html">Health Guides</a></li>
+                    <li><a href="404.html">Insurance & Billing Info</a></li>
+                    <li><a href="404.html">Appointment Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="department.html">Departments</a></li>
+                    <li><a href="price.html">Prices</a></li>
+                    <li><a href="404.html">Teams</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h3>Let's do it!</h3>
+                <div class="social-icons-2">
+                    <a href="https://www.facebook.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/facebook.png" alt="Facebook">
+                      </a>
+                      <a href="https://twitter.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/white-twitter.png" alt="Twitter">
+                      </a>
+                      <a href="https://www.linkedin.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/white_lindkln.png" alt="LinkedIn">
+                      </a>
+                      <a href="https://www.tiktok.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/white-tiktok.png" alt="TikTok">
+                      </a>
+                      <a href="https://www.instagram.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/instagram.png" alt="Instagram">
+                      </a>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email Address">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms of Use</a>
+            <a href="404.html">Legal</a>
+            <a href="404.html">Site Map</a>
+        </div>
+    </footer>
+
+    
+    
+</body>
+</html>

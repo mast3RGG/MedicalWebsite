@@ -1,0 +1,492 @@
+.pricing-hero-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.hero-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.6);
+    animation: twinkle 3s infinite;
+}
+
+.star-1 {
+    top: 15%;
+    right: 15%;
+    font-size: 24px;
+    animation-delay: 0s;
+}
+
+.star-2 {
+    top: 8%;
+    right: 8%;
+    font-size: 16px;
+    animation-delay: 1s;
+}
+
+.star-3 {
+    top: 25%;
+    right: 25%;
+    font-size: 20px;
+    animation-delay: 2s;
+}
+
+.star-4 {
+    top: 12%;
+    right: 35%;
+    font-size: 14px;
+    animation-delay: 0.5s;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.hero-content-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title-section {
+    color: white;
+}
+
+.hero-main-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.hero-subtitle {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 0;
+}
+
+.hero-subtitle .highlight {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.hero-description-section {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+.hero-description-paragraph {
+    margin-bottom: 24px;
+}
+
+.hero-description-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+.pricing-content-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.featured {
+    border: 2px solid #3b82f6;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    height: 6px;
+    background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa);
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 10px;
+}
+
+.pricing-subtitle {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.pricing-amount {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #1e40af;
+    line-height: 1;
+}
+
+.price-period {
+    color: #6b7280;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.pricing-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+.feature-icon {
+    color: #10b981;
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.pricing-button {
+    width: 100%;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pricing-button:hover {
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e40af;
+    margin-bottom: 16px;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hero-content-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-main-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 2rem;
+    }
+
+    .pricing-content-section {
+        padding: 60px 20px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}   
+
+
+.healthcare-main-container {
+    max-width: 1320px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.healthcare-page-title {
+    text-align: center;
+    color: #2563eb;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.healthcare-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.healthcare-service-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.healthcare-service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.healthcare-service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.healthcare-service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.healthcare-service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: all 0.3s ease;
+    padding: 8px;
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+}
+
+.healthcare-service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.healthcare-service-card:hover .healthcare-service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.healthcare-service-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.healthcare-service-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4facfe;
+    text-align: center;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.healthcare-service-price .original-price {
+    font-size: 1.2rem;
+    color: #95a5a6;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.healthcare-service-price .discount-badge {
+    background: #e74c3c;
+    color: white;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.healthcare-service-description {
+    color: #5a6c7d;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.healthcare-service-add-to-cart-btn {
+    background: linear-gradient(135deg, #017EFF 0%, #017EFF 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.healthcare-service-add-to-cart-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.healthcare-service-add-to-cart-btn img {
+    margin-left: 20px;
+    margin-bottom: -5px;
+}
+
+.healthcare-service-add-to-cart-btn:hover::before {
+    left: 100%;
+}
+
+.healthcare-service-add-to-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(79, 172, 254, 0.4);
+}
+
+.healthcare-service-add-to-cart-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .healthcare-services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .healthcare-service-card {
+        max-width: 100%;
+    }
+    
+    .healthcare-page-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+    

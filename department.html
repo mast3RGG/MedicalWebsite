@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Khand:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Khand:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
+
+    <style>
+    body {
+        background-image: url("imgs/Group 2.png");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 1600px auto;
+    }
+    
+    @media (max-width: 1123px) {
+        body {
+            background-size: 200% auto;
+            background-position: center top;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        body {
+            background-size: 500% 10%;
+        }
+    }
+</style>
+</head>
+<body >
+    <script src="cart.js" defer></script>
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo"><img src="imgs/Logo.png" alt=""></div>
+                <div class="logo-text">
+                    <span id="logoText" class="nova">Nova</span><span class="meds">Meds</span>
+                </div>
+            </div>
+            
+            <div class="contact-section">
+                <div class="contact-group">
+                    <div class="contact-icon phone-icon"><img src="imgs/PhonePng.png" alt=""></div>
+                    <div class="contact-info">
+                        <span class="contact-label">Phone Number</span>
+                        <a href="tel:+373-123-123-31" class="contact-value">+373-123-123-31</a>
+                    </div>
+                </div>
+                
+                <div class="contact-group">
+                    <div class="contact-icon email-icon"><img src="imgs/email.png" alt=""></div>
+                    <div class="contact-info">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:info@novameds.com" class="contact-value">info@novameds.com</a>
+                    </div>
+                </div>
+                
+                <button class="book-btn" onclick="bookAppointment()">
+                    Book Appointment
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo-text">
+                <span class="nova">Nova</span><span class="meds">Meds</span>
+            </div>
+            <button class="close-btn" onclick="closeMobileMenu()">✕</button>
+        </div>
+        
+        <div class="mobile-contact-item">
+            <div class="contact-icon phone-icon"><img src="imgs/blue-phone.png" alt="">
+            </div>
+            <div>
+                <div class="contact-label">Phone Number</div>
+                <a href="tel:+373-123-123-31" class="contact-value">+373-123-123-31</a>
+            </div>
+        </div>
+        
+        <div class="mobile-contact-item">
+            <div class="contact-icon email-icon"><img src="imgs/blue-email.png" alt=""></div>
+            <div>
+                <div class="contact-label">Email</div>
+                <a href="mailto:info@novameds.com" class="contact-value">info@novameds.com</a>
+            </div>
+        </div>
+        
+        <button class="book-btn mobile-book-btn" onclick="bookAppointment()">
+            Book an Appointment
+        </button>
+
+    
+        <nav class="mobile-nav-menu">
+            <div class="mobile-nav-item">
+                <a href="homepage.html" class="mobile-nav-link">
+                    HOME
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="aboutus.html" class="mobile-nav-link">
+                    ABOUT US
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="department.html" class="mobile-nav-link">
+                    DEPARTMENT
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="price.html" class="mobile-nav-link">
+                    PRICES
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="404.html" class="mobile-nav-link">
+                    BLOGS
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="contact.html" class="mobile-nav-link">
+                    CONTACT
+                </a>
+            </div>
+        </nav>
+
+
+        <div class="mobile-social-icons">
+            <a href="https://www.facebook.com/" class="social-icon" title="Facebook"><img src="imgs/blue-facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/" class="social-icon" title="Instagram"><img src="imgs/blue-insta.png" alt=""></a>
+            <a href="#" class="social-icon" title="Cart" data-cart-toggle>
+                <img src="imgs/blue-cart.png" alt="">
+                <span data-cart-badge class="cart-badge"></span>
+            </a>
+            <a href="#" class="social-icon" title="Search"><img src="imgs/blue-magnifying.png" alt=""></a>
+        </div>
+    </div>
+
+    <nav class="nav-section">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="homepage.html" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="aboutus.html" class="nav-link ">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a href="department.html" class="nav-link active">DEPARTMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="price.html" class="nav-link">
+                        PRICES
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="404.html" class="nav-link">BLOGS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" class="social-icon" title="Facebook"><img src="imgs/facebook.png" alt=""></a>
+                <a href="https://www.instagram.com/" class="social-icon" title="Instagram"><img src="imgs/instagram.png" alt=""></a>
+                <a href="#" class="social-icon" title="Cart" data-cart-toggle>
+                    <img src="imgs/cart.png" alt="">
+                    <span data-cart-badge class="cart-badge"></span>
+                </a>
+                <a href="#" class="social-icon" title="Search"><img src="imgs/magnifying.png" alt=""></a>
+            </div>
+        </div>
+    </nav>
+    
+     <section class="department-section">
+        <div class="floating-elements"></div>
+        <div class="floating-elements"></div>
+        
+        <div class="container-department">
+            <div class="content-left-department">
+                <div class="badge-department">Healthcare Medical</div>
+                <h1 class="main-title-department">
+                    DEPART<span class="highlight-department">MENT</span>
+                </h1>
+                <p class="description-department">
+                    We're a passionate team dedicated to building smart, impactful solutions. Driven by creativity and a love for innovation, we aim to make a real difference through our work. Whether it's solving problems or creating new experiences, we're here to deliver value and grow together.
+                </p>
+                <div class="action-buttons-department">
+                    <a href="#" class="btn-department btn-primary-department">Learn More</a>
+                    <a href="tel:+373111222333" class="btn-department btn-outline-department">
+                        <svg class="phone-icon" viewBox="0 0 24 24">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        +373-111-222-33
+                    </a>
+                </div>
+            </div>
+            
+            <div class="images-right-department">
+                <div class="image-card large">
+                    <img src="imgs/pexels-1222300-2324837 1.png" alt="Medical professional in surgery">
+                </div>
+                <div class="image-card-department">
+                    <img src="imgs/pexels-kowalievska-1170979 1.png" alt="Medical team consultation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <img src="imgs/uil_hospital.png" alt="">
+                </div>
+                <span class="stat-number">500+</span>
+                <div class="stat-label">Patients Treated</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <img src="imgs/ic_outline-people.png" alt="" style="margin-right: 30px;">
+                </div>
+                <span class="stat-number">100+</span>
+                <div class="stat-label">Experts Doctors</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <img src="imgs/wpf_medical-doctor.png" alt="" ;">
+                </div>
+                <span class="stat-number">24/7</span>
+                <div class="stat-label">Emergency Care</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                   <img src="imgs/mingcute_medal-line.png" alt="">
+                </div>
+                <span class="stat-number">98%</span>
+                <div class="stat-label">Success Rate</div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="services-section">
+        <div class="floating-dots floating-dot-1"></div>
+        <div class="floating-dots floating-dot-2"></div>
+        <div class="floating-dots floating-dot-3"></div>
+        
+        <div class="services-container">
+            <div class="services-badge">Our Services</div>
+            <h1 class="main-title-services">
+                Department <span class="services-highlight">Services</span>
+            </h1>
+            <p class="services-description">
+                We offer comprehensive medical services utilizing state-of-the-art equipment and proven treatment methods to ensure the best possible outcomes for our patients
+            </p>
+        </div>
+    </section>
+
+    <div class="medical-services-container">
+        <div class="medical-service-card featured-medical-card">
+            <div class="medical-service-image">
+                <span><img src="imgs/pexels-chokniti-khongchum-1197604-3938023.jpg" alt=""></span>
+            </div>
+            <div class="medical-service-body">
+                <div class="medical-service-content">
+                    <h2>Interventional Cardiology</h2>
+                    <p>Advanced catheter-based procedures and minimally invasive heart interventions for complex cardiovascular conditions</p>
+                </div> 
+                <a href="404.html" class="medical-learn-more">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="medical-service-card">
+            <div class="medical-service-image">
+                <span><img src="imgs/pexels-kowalievska-1170979.jpg" alt=""></span>
+            </div>
+            <div class="medical-service-body">
+                <div class="medical-service-content">
+                    <h2>Advanced Imaging & Diagnostics</h2>
+                    <p>State-of-the-art imaging technology and comprehensive diagnostic procedures for precise medical assessment</p>
+                </div>
+                <a href="404.html" class="medical-learn-more">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="medical-service-card">
+            <div class="medical-service-image">
+                <span><img src="imgs/pexels-thirdman-5327656.jpg" alt=""></span>
+            </div>
+            <div class="medical-service-body">
+                <div class="medical-service-content">
+                    <h2>Personalized Medicine & Recovery</h2>
+                    <p>Customized treatment protocols and comprehensive rehabilitation programs tailored to individual patient needs</p>
+                </div>
+                <a href="404.html" class="medical-learn-more">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="medical-service-card">
+            <div class="medical-service-image">
+                <span><img src="imgs/pexels-1222300-2324837 1.png" alt=""></span>
+            </div>
+            <div class="medical-service-body">
+                <div class="medical-service-content">
+                    <h2>Emergency Medicine</h2>
+                    <p>24/7 emergency care with rapid response protocols and critical care management for urgent medical situations</p>
+                </div>
+                <a href="404.html" class="medical-learn-more">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="medical-service-card">
+            <div class="medical-service-image">
+                <span><img src="imgs/image-3-aboutus.png" alt=""></span>
+            </div>
+            <div class="medical-service-body">
+                <div class="medical-service-content">
+                    <h2>Surgical Specialties</h2>
+                    <p>Comprehensive surgical services including minimally invasive procedures and robotic-assisted operations</p>
+                </div>
+                <a href="404.html" class="medical-learn-more">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="medical-service-card">
+            <div class="medical-service-image">
+                <span><img src="imgs/image-2-aboutus.png" alt=""></span>
+            </div>
+            <div class="medical-service-body">
+                <div class="medical-service-content">
+                    <h2>Preventive Care & Wellness</h2>
+                    <p>Comprehensive health screenings and preventive medicine programs designed to maintain optimal health</p>
+                </div>
+                <a href="404.html" class="medical-learn-more">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="medical-service-card">
+            <div class="medical-service-image">
+                <span><img src="imgs/pexels-tima-miroshnichenko-5452293.jpg" alt=""></span>
+            </div>
+            <div class="medical-service-body">
+                <div class="medical-service-content">
+                    <h2>Neurology & Brain Health</h2>
+                    <p>Advanced neurological care and brain health services for comprehensive neurological disorder management</p>
+                </div>
+                <a href="404.html" class="medical-learn-more">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="medical-service-card">
+            <div class="medical-service-image">
+                <span><img src="imgs/pexels-chokniti-khongchum-1197604-3938023.jpg" alt=""></span>
+            </div>
+            <div class="medical-service-body">
+                <div class="medical-service-content">
+                    <h2>Oncology & Cancer Care</h2>
+                    <p>Comprehensive cancer treatment programs with multidisciplinary approach and cutting-edge therapies</p>
+                </div>
+                <a href="404.html" class="medical-learn-more">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="medical-service-card">
+            <div class="medical-service-image">
+                <span><img src="imgs/pexels-kowalievska-1170979.jpg" alt=""></span>
+            </div>
+            <div class="medical-service-body">
+                <div class="medical-service-content">
+                    <h2>Women's Health Services</h2>
+                    <p>Specialized healthcare services for women including reproductive health and maternal care programs</p>
+                </div>
+                <a href="404.html" class="medical-learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="book-btn" onclick="bookAppointment()">
+            Book Appointment
+        </button>
+    </div>
+
+    <div class="about-department-container">
+        <div class="department-badge">About Department</div>
+        
+        <div class="department-content">
+            <div class="department-text">
+                <h1 class="department-title">Excellence in Medical Care</h1>
+                
+                <p class="department-description">
+                    Our department is committed to providing world-class medical care through a combination of experienced professionals, advanced technology, and patient-centered approach. We strive to deliver personalized treatment plans that address each patient's unique healthcare needs.
+                </p>
+                
+                <p class="department-commitment">
+                    With years of experience and continuous commitment to medical excellence, our team has established itself as a leader in providing comprehensive healthcare solutions.
+                </p>
+                
+                <ul class="department-features">
+                    <li>Experienced Medical Professionals</li>
+                    <li>State-of-the-Art Equipment</li>
+                    <li>Patient-Centered Care</li>
+                    <li>24/7 Emergency Support</li>
+                    <li>Comprehensive Treatment Plans</li>
+                </ul>
+            </div>
+            
+            <div class="department-images">
+                <div class="medical-image lab-image">
+                    <div class="image-placeholder">
+                        <div class="image-icon"><img src="imgs/pexels-kowalievska-1170979 1.png" alt="" id="first-img-department"></div>
+                        <span>Laboratory Research</span>
+                    </div>
+                </div>
+                
+                <div class="medical-image doctor-image">
+                    <div class="image-placeholder">
+                        <div class="image-icon"><img src="imgs/pexels-chokniti-khongchum-1197604-3938023.jpg" alt="" id="second-img-department">
+                        </div>
+                        <span>Medical Professional</span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="appointment-banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <h2>Book an Appointment</h2>
+                <div class="banner-features">
+                    <div class="feature">Top-Rated Medical Team</div>
+                    <div class="feature">Trusted by Thousands</div>
+                    <div class="feature">Flexible Scheduling</div>
+                </div>
+            </div>
+            <div class="banner-buttons">
+                <a href="price.html" class="btn btn-primary">Get started</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <div class="logo"><img src="imgs/white-logo.png" alt="">
+                    </div>
+                    <div class="brand-name">
+                        <span class="nova">Nova</span><span class="meds">Meds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="404.html">General Consultations</a></li>
+                    <li><a href="404.html">Preventive Health Screenings</a></li>
+                    <li><a href="404.html">Laboratory Testing</a></li>
+                    <li><a href="404.html">Allergy Testing</a></li>
+                    <li><a href="404.html">Wound Care & Suturing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Specialist</h3>
+                <ul>
+                    <li><a href="404.html">Cardiology</a></li>
+                    <li><a href="404.html">Dermatology</a></li>
+                    <li><a href="404.html">Pediatrics</a></li>
+                    <li><a href="404.html">Gynecology</a></li>
+                    <li><a href="404.html">Neurology</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="404.html">Patient Forms</a></li>
+                    <li><a href="404.html">Blog</a></li>
+                    <li><a href="404.html">FAQs</a></li>
+                    <li><a href="404.html">Health Guides</a></li>
+                    <li><a href="404.html">Insurance & Billing Info</a></li>
+                    <li><a href="404.html">Appointment Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="department.html">Departments</a></li>
+                    <li><a href="price.html">Prices</a></li>
+                    <li><a href="404.html">Teams</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h3>Let's do it!</h3>
+                <div class="social-icons-2">
+                    <a href="https://www.facebook.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/facebook.png" alt="Facebook">
+                      </a>
+                      <a href="https://twitter.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/white-twitter.png" alt="Twitter">
+                      </a>
+                      <a href="https://www.linkedin.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/white_lindkln.png" alt="LinkedIn">
+                      </a>
+                      <a href="https://www.tiktok.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/white-tiktok.png" alt="TikTok">
+                      </a>
+                      <a href="https://www.instagram.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/instagram.png" alt="Instagram">
+                      </a>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email Address">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms of Use</a>
+            <a href="404.html">Legal</a>
+            <a href="404.html">Site Map</a>
+        </div>
+    </footer>
+
+    <script src="script-department.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Khand:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Khand:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style6.css">
+    <link rel="stylesheet" href="style2.css">
+
+    <style>
+        body {
+        background-image: url("imgs/Group 2.png");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 1600px 14%;
+    }
+    
+    @media (max-width: 1123px) {
+        body {
+            background-size: 200% auto;
+            background-position: center top;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        body {
+            background-size: 500% 8%;
+        }
+    }
+    </style>
+
+</head>
+<body>
+    <script src="cart.js" defer></script>
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo"><img src="imgs/Logo.png" alt=""></div>
+                <div class="logo-text">
+                    <span id="logoText" class="nova">Nova</span><span class="meds">Meds</span>
+                </div>
+            </div>
+            
+            <div class="contact-section">
+                <div class="contact-group">
+                    <div class="contact-icon phone-icon"><img src="imgs/PhonePng.png" alt=""></div>
+                    <div class="contact-info">
+                        <span class="contact-label">Phone Number</span>
+                        <a href="tel:+373-123-123-31" class="contact-value">+373-123-123-31</a>
+                    </div>
+                </div>
+                
+                <div class="contact-group">
+                    <div class="contact-icon email-icon"><img src="imgs/email.png" alt=""></div>
+                    <div class="contact-info">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:info@novameds.com" class="contact-value">info@novameds.com</a>
+                    </div>
+                </div>
+                
+                <button class="book-btn" onclick="bookAppointment()">
+                    Book Appointment
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo-text">
+                <span class="nova">Nova</span><span class="meds">Meds</span>
+            </div>
+            <button class="close-btn" onclick="closeMobileMenu()">✕</button>
+        </div>
+        
+        <div class="mobile-contact-item">
+            <div class="contact-icon phone-icon"><img src="imgs/blue-phone.png" alt="">
+            </div>
+            <div>
+                <div class="contact-label">Phone Number</div>
+                <a href="tel:+373-123-123-31" class="contact-value">+373-123-123-31</a>
+            </div>
+        </div>
+        
+        <div class="mobile-contact-item">
+            <div class="contact-icon email-icon"><img src="imgs/blue-email.png" alt=""></div>
+            <div>
+                <div class="contact-label">Email</div>
+                <a href="mailto:info@novameds.com" class="contact-value">info@novameds.com</a>
+            </div>
+        </div>
+        
+        <button class="book-btn mobile-book-btn" onclick="bookAppointment()">
+            Book an Appointment
+        </button>
+
+    
+        <nav class="mobile-nav-menu">
+            <div class="mobile-nav-item">
+                <a href="homepage.html" class="mobile-nav-link">
+                    HOME
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="aboutus.html" class="mobile-nav-link">
+                    ABOUT US
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="department.html" class="mobile-nav-link">
+                    DEPARTMENT
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="price.html" class="mobile-nav-link">
+                    PRICES
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="404.html" class="mobile-nav-link">
+                    BLOGS
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="contact.html" class="mobile-nav-link">
+                    CONTACT
+                </a>
+            </div>
+        </nav>
+
+
+        <div class="mobile-social-icons">
+            <a href="https://www.facebook.com/" class="social-icon" title="Facebook"><img src="imgs/blue-facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/" class="social-icon" title="Instagram"><img src="imgs/blue-insta.png" alt=""></a>
+            <a href="#" class="social-icon" title="Cart" data-cart-toggle>
+                <img src="imgs/blue-cart.png" alt="">
+                <span data-cart-badge class="cart-badge"></span>
+            </a>
+            <a href="#" class="social-icon" title="Search"><img src="imgs/blue-magnifying.png" alt=""></a>
+        </div>
+    </div>
+
+    <nav class="nav-section">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="homepage.html" class="nav-link active">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="aboutus.html" class="nav-link">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a href="department.html" class="nav-link">DEPARTMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="price.html" class="nav-link">
+                        PRICES
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="404.html" class="nav-link">BLOGS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" class="social-icon" title="Facebook"><img src="imgs/facebook.png" alt=""></a>
+                <a href="https://www.instagram.com/" class="social-icon" title="Instagram"><img src="imgs/instagram.png" alt=""></a>
+                <a href="#" class="social-icon" title="Cart" data-cart-toggle>
+                    <img src="imgs/cart.png" alt="">
+                    <span data-cart-badge class="cart-badge"></span>
+                </a>
+                <a href="#" class="social-icon" title="Search"><img src="imgs/magnifying.png" alt=""></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="pricing-hero-section">
+        <div class="hero-stars">
+            <div class="star star-1">✦</div>
+            <div class="star star-2">✧</div>
+            <div class="star star-3">✦</div>
+            <div class="star star-4">✧</div>
+        </div>
+        
+        <div class="hero-content-container">
+            <div class="hero-title-section">
+                <h1 class="hero-main-title">PRICES</h1>
+                <h2 class="hero-subtitle">
+                    <span class="highlight">Treatment</span> & Therapy
+                </h2>
+            </div>
+            
+            <div class="hero-description-section">
+                <p class="hero-description-paragraph">
+                    At our clinic, we offer a comprehensive range of treatments and therapies carefully 
+                    tailored to meet the unique needs of each patient. Our dedicated team of medical 
+                    professionals works closely with you to develop personalized care plans that promote 
+                    recovery, manage chronic conditions, and enhance your overall quality of life.
+                </p>
+                
+                <p class="hero-description-paragraph">
+                    Whether you're seeking rehabilitation, pain relief, or long-term health support, our 
+                    approach combines expertise, compassion, and modern techniques to ensure the best 
+                    possible outcomes for your well-being.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-content-section">
+        <div class="section-header">
+            <h2 class="section-title">Choose Your Treatment Plan</h2>
+            <p class="section-description">
+                Select from our range of professional medical services designed to meet your specific health needs and budget requirements.
+            </p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Basic Consultation</h3>
+                    <p class="pricing-subtitle">Initial assessment and diagnosis</p>
+                </div>
+                
+                <div class="pricing-amount">
+                    <div class="price">$150</div>
+                    <div class="price-period">per session</div>
+                </div>
+                
+                <ul class="pricing-features">
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        30-minute consultation
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Medical history review
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Basic diagnostic assessment
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Treatment recommendations
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Follow-up care plan
+                    </li>
+                </ul>
+                
+                <button class="pricing-button">Book Consultation</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="featured-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Comprehensive Package</h3>
+                    <p class="pricing-subtitle">Complete treatment and therapy</p>
+                </div>
+                
+                <div class="pricing-amount">
+                    <div class="price">$450</div>
+                    <div class="price-period">per month</div>
+                </div>
+                
+                <ul class="pricing-features">
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        4 consultation sessions
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Diagnostic imaging included
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Physical therapy sessions
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Medication management
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        24/7 support hotline
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Progress monitoring
+                    </li>
+                </ul>
+                
+                <button class="pricing-button">Start Treatment</button>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Specialized Therapy</h3>
+                    <p class="pricing-subtitle">Advanced therapeutic interventions</p>
+                </div>
+                
+                <div class="pricing-amount">
+                    <div class="price">$200</div>
+                    <div class="price-period">per session</div>
+                </div>
+                
+                <ul class="pricing-features">
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        60-minute therapy session
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Specialized equipment use
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Advanced techniques
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Personalized treatment plan
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Progress evaluation
+                    </li>
+                </ul>
+                
+                <button class="pricing-button">Schedule Therapy</button>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Diagnostic Package</h3>
+                    <p class="pricing-subtitle">Comprehensive health screening</p>
+                </div>
+                
+                <div class="pricing-amount">
+                    <div class="price">$350</div>
+                    <div class="price-period">one-time</div>
+                </div>
+                
+                <ul class="pricing-features">
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Full body examination
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Laboratory tests
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Radiographic imaging
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Detailed health report
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Consultation included
+                    </li>
+                </ul>
+                
+                <button class="pricing-button">Book Screening</button>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Wellness Program</h3>
+                    <p class="pricing-subtitle">Preventive care and maintenance</p>
+                </div>
+                
+                <div class="pricing-amount">
+                    <div class="price">$120</div>
+                    <div class="price-period">per month</div>
+                </div>
+                
+                <ul class="pricing-features">
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Monthly check-ups
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Health monitoring
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Lifestyle counseling
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Nutrition guidance
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Exercise recommendations
+                    </li>
+                </ul>
+                
+                <button class="pricing-button">Join Program</button>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Emergency Care</h3>
+                    <p class="pricing-subtitle">Urgent medical attention</p>
+                </div>
+                
+                <div class="pricing-amount">
+                    <div class="price">$300</div>
+                    <div class="price-period">per visit</div>
+                </div>
+                
+                <ul class="pricing-features">
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Immediate attention
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Emergency diagnostics
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Critical care treatment
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Stabilization procedures
+                    </li>
+                    <li class="pricing-feature">
+                        <span class="feature-icon">✓</span>
+                        Referral coordination
+                    </li>
+                </ul>
+                
+                <button class="pricing-button">Emergency Contact</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="healthcare-main-container">
+        <h1 class="healthcare-page-title">Healthcare Services</h1>
+        
+        <div class="healthcare-services-grid">
+            <div class="healthcare-service-card">
+                <div class="healthcare-service-icon">
+                    <img src="imgs/img1.jpg" alt="Medication Management">
+                </div>
+                <h3 class="healthcare-service-title">Medication Management</h3>
+                <div class="healthcare-service-price">
+                    <span class="original-price">$250</span>
+                    $199
+                    <span class="discount-badge">20% OFF</span>
+                </div>
+                <p class="healthcare-service-description">
+                    Comprehensive prescribing and monitoring of medications for effective treatment and optimal patient outcomes.
+                </p>
+                <button class="healthcare-service-add-to-cart-btn">Add to cart <img src="imgs/material-symbols_shopping-cart-outline.png" alt=""></button>
+            </div>
+
+            <div class="healthcare-service-card">
+                <div class="healthcare-service-icon">
+                    <img src="imgs/img2.jpg" alt="Physical Therapy">
+                </div>
+                <h3 class="healthcare-service-title">Physical Therapy</h3>
+                <div class="healthcare-service-price">
+                    <span class="original-price">$180</span>
+                    $150
+                    <span class="discount-badge">17% OFF</span>
+                </div>
+                <p class="healthcare-service-description">
+                    Professional rehabilitation and targeted exercises for injury recovery and mobility improvement programs.
+                </p>
+                <button class="healthcare-service-add-to-cart-btn"  id="therapy-but">Add to cart <img src="imgs/material-symbols_shopping-cart-outline.png" alt=""></button>
+            </div>
+
+            <div class="healthcare-service-card">
+                <div class="healthcare-service-icon">
+                    <img src="imgs/img3.jpg" alt="Surgical Treatments">
+                </div>
+                <h3 class="healthcare-service-title">Surgical Treatments</h3>
+                <div class="healthcare-service-price">
+                    $1,250+
+                </div>
+                <p class="healthcare-service-description">
+                    Advanced minor and major surgical procedures performed by experienced specialists with cutting-edge technology.
+                </p>
+                <button class="healthcare-service-add-to-cart-btn">Add to cart <img src="imgs/material-symbols_shopping-cart-outline.png" alt=""></button>
+            </div>
+
+            <div class="healthcare-service-card">
+                <div class="healthcare-service-icon">
+                    <img src="imgs/img4.jpg" alt="Diagnostic Services">
+                </div>
+                <h3 class="healthcare-service-title">Diagnostic Services</h3>
+                <div class="healthcare-service-price">
+                    <span class="original-price">$320</span>
+                    $275
+                    <span class="discount-badge">14% OFF</span>
+                </div>
+                <p class="healthcare-service-description">
+                    Comprehensive medical testing and imaging services for accurate diagnosis and early detection of health conditions.
+                </p>
+                <button class="healthcare-service-add-to-cart-btn">Add to cart <img src="imgs/material-symbols_shopping-cart-outline.png" alt=""></button>
+            </div>
+
+            <div class="healthcare-service-card">
+                <div class="healthcare-service-icon">
+                    <img src="imgs/img5.jpg" alt="Cardiology Care">
+                </div>
+                <h3 class="healthcare-service-title">Cardiology Care</h3>
+                <div class="healthcare-service-price">
+                    $450
+                </div>
+                <p class="healthcare-service-description">
+                    Specialized heart health services including prevention, treatment, and management of cardiovascular conditions.
+                </p>
+                <button class="healthcare-service-add-to-cart-btn"">Add to cart <img src="imgs/material-symbols_shopping-cart-outline.png" alt=""></button>
+            </div>
+
+            <div class="healthcare-service-card">
+                <div class="healthcare-service-icon">
+                    <img src="imgs/img6.jpg" alt="Mental Health Support">
+                </div>
+                <h3 class="healthcare-service-title">Mental Health Support</h3>
+                <div class="healthcare-service-price">
+                    <span class="original-price">$200</span>
+                    $175
+                    <span class="discount-badge">13% OFF</span>
+                </div>
+                <p class="healthcare-service-description">
+                    Professional counseling and therapy services for mental wellness, stress management, and emotional support.
+                </p>
+                <button class="healthcare-service-add-to-cart-btn">Add to cart <img src="imgs/material-symbols_shopping-cart-outline.png" alt=""></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="appointment-banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <h2>Book an Appointment</h2>
+                <div class="banner-features">
+                    <div class="feature">Top-Rated Medical Team</div>
+                    <div class="feature">Trusted by Thousands</div>
+                    <div class="feature">Flexible Scheduling</div>
+                </div>
+            </div>
+            <div class="banner-buttons">
+                <a href="price.html" class="btn btn-primary">Get started</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <div class="logo"><img src="imgs/white-logo.png" alt="">
+                    </div>
+                    <div class="brand-name">
+                        <span class="nova">Nova</span><span class="meds">Meds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="404.html">General Consultations</a></li>
+                    <li><a href="404.html">Preventive Health Screenings</a></li>
+                    <li><a href="404.html">Laboratory Testing</a></li>
+                    <li><a href="404.html">Allergy Testing</a></li>
+                    <li><a href="404.html">Wound Care & Suturing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Specialist</h3>
+                <ul>
+                    <li><a href="404.html">Cardiology</a></li>
+                    <li><a href="404.html">Dermatology</a></li>
+                    <li><a href="404.html">Pediatrics</a></li>
+                    <li><a href="404.html">Gynecology</a></li>
+                    <li><a href="404.html">Neurology</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="404.html">Patient Forms</a></li>
+                    <li><a href="404.html">Blog</a></li>
+                    <li><a href="404.html">FAQs</a></li>
+                    <li><a href="404.html">Health Guides</a></li>
+                    <li><a href="404.html">Insurance & Billing Info</a></li>
+                    <li><a href="404.html">Appointment Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="department.html">Departments</a></li>
+                    <li><a href="price.html">Prices</a></li>
+                    <li><a href="404.html">Teams</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h3>Let's do it!</h3>
+                <div class="social-icons-2">
+                    <a href="https://www.facebook.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/facebook.png" alt="Facebook">
+                      </a>
+                      <a href="https://twitter.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/white-twitter.png" alt="Twitter">
+                      </a>
+                      <a href="https://www.linkedin.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/white_lindkln.png" alt="LinkedIn">
+                      </a>
+                      <a href="https://www.tiktok.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/white-tiktok.png" alt="TikTok">
+                      </a>
+                      <a href="https://www.instagram.com/" class="social-icon-2" target="_blank" rel="noopener noreferrer">
+                        <img src="imgs/instagram.png" alt="Instagram">
+                      </a>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email Address">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms of Use</a>
+            <a href="404.html">Legal</a>
+            <a href="404.html">Site Map</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="script3.js" defer></script>
+   
+
+</body>
+</html>

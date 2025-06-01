@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style5.css">
+    <title>Checkout</title>
+    <style>
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 8px;
+            color: white;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .notification.success {
+            background-color: #4CAF50;
+        }
+        
+        .notification.error {
+            background-color: #f44336;
+        }
+        
+        .notification.info {
+            background-color: #2196F3;
+        }
+        
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .cart-item.removing {
+            animation: fadeOutRight 0.3s forwards;
+        }
+        
+        @keyframes fadeOutRight {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(20px); }
+        }
+        
+        .promo-success {
+            color: #4CAF50;
+            margin-top: 10px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .card-input-error {
+            color: #f44336;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="checkout-container">
+    <div class="shopping-section">
+        <div class="shopping-header" onclick="goBack()">
+            <span class="back-arrow">‹</span>
+            <h1 class="shopping-title">Shopping Continue</h1>
+        </div>
+
+        <div class="cart-container">
+            <h2 class="cart-header">Shopping cart</h2>
+            <p class="cart-subtitle">You have <span id="item-count">0</span> item<span id="item-plural">s</span> in your cart</p>
+
+            <div id="cart-items">
+            </div>
+
+            <div class="empty-cart" id="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <p>Your cart is empty</p>
+            </div>
+
+            <div class="promo-section">
+                <h3 style="margin-bottom: 10px; font-size: 16px;">Promo Code</h3>
+                <div class="promo-input-group">
+                    <input type="text" class="promo-input" id="promo-input" placeholder="Enter promo code">
+                    <button class="promo-btn" onclick="applyPromo()">Apply</button>
+                </div>
+                <div id="promo-success" class="promo-success"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-section">
+        <div class="card-details-header">
+            <h2 class="card-title">Card Details</h2>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Profile" class="profile-image">
+        </div>
+
+        <div class="card-type-section">
+            <p class="section-label">Card type</p>
+            <div class="payment-methods">
+                <span class="payment-method mastercard active" onclick="selectPaymentMethod(this)">MasterCard</span>
+                <span class="payment-method visa" onclick="selectPaymentMethod(this)">VISA</span>
+                <span class="payment-method rupay" onclick="selectPaymentMethod(this)">RuPay</span>
+                <button class="see-all-btn">See all</button>
+            </div>
+        </div>
+
+        <div class="card-input-group">
+            <p class="section-label">Name on card</p>
+            <input type="text" class="card-input" id="card-name" placeholder="John Doe" required>
+            <div id="card-name-error" class="card-input-error"></div>
+        </div>
+
+        <div class="card-input-group">
+            <p class="section-label">Card Number</p>
+            <input type="text" class="card-input card-number-input" id="card-number" placeholder="1111 2222 3333 4444" maxlength="19" required>
+            <div id="card-number-error" class="card-input-error"></div>
+        </div>
+
+        <div class="card-row">
+            <div class="card-input-group">
+                <p class="section-label">Expiration date</p>
+                <input type="text" class="card-input" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                <div id="card-expiry-error" class="card-input-error"></div>
+            </div>
+            <div class="card-input-group">
+                <p class="section-label">CVV</p>
+                <input type="text" class="card-input" id="card-cvv" placeholder="123" maxlength="4" required>
+                <div id="card-cvv-error" class="card-input-error"></div>
+            </div>
+        </div>
+
+        <div class="order-summary">
+            <div class="summary-row">
+                <span class="summary-label">Subtotal</span>
+                <span class="summary-value" id="subtotal">$0</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Tax (8%)</span>
+                <span class="summary-value" id="tax">$0</span>
+            </div>
+            <div class="summary-row" id="discount-row" style="display: none;">
+                <span class="summary-label discount-row">Discount</span>
+                <span class="summary-value discount-row" id="discount">-$0</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Service Fee</span>
+                <span class="summary-value" id="service-fee">$5</span>
+            </div>
+            <div class="summary-row total-row">
+                <span class="summary-label">Total</span>
+                <span class="summary-value" id="total">$5</span>
+            </div>
+        </div>
+
+        <button class="checkout-btn" id="checkout-btn" onclick="processCheckout()" disabled>
+            <span class="checkout-amount" id="checkout-amount">$0</span>
+            <span>Checkout</span>
+            <span class="checkout-arrow">→</span>
+            <div class="loading-spinner" id="loading-spinner"></div>
+        </button>
+    </div>
+</div>
+
+<script src="script2.js">
+    
+</script>
+</body>
+</html>
